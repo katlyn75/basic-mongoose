@@ -1,0 +1,39 @@
+{
+  "name": "basic-mongoose",
+  "version": "1.0.0",
+  "description": "learning to test mongoose",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+      "test": "npm run mocha",
+    "mocha": "mocha --recursive",
+    "test:dev": "nodemon --exec 'npm run mocha'",
+    "test:unit": "nodemon --exec 'npm run mocha -- ./test/unit'",
+    "test:e2e": "nodemon --exec 'npm run mocha -- ./test/e2e'",
+    "start": "node server.js",
+    "start:dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/katlyn75/basic-mongoose.git"
+  },
+  "author": "Katlyn",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-datetime": "^1.5.0",
+    "chai-http": "^4.0.0",
+    "eslint": "^4.19.1",
+    "mocha": "^5.1.0"
+  },
+  "dependencies": {
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "mongoose": "^5.0.15"
+  },
+  "bugs": {
+    "url": "https://github.com/katlyn75/basic-mongoose/issues"
+  },
+  "homepage": "https://github.com/katlyn75/basic-mongoose#readme"
+}
