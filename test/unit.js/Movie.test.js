@@ -21,5 +21,19 @@ describe('Movies model', () => {
         })*/
        
         assert.deepEqual(movie.toJSON(), { _id:movie._id, ...data });
+        assert.isUndefined(Movie.validateSync());
+
+    });
+    
+
+    it('required fields', () => {
+        const movie = new Movie({});
+        const validation = movie.validateSync();
+        assert.isDefined('validation', 'you have erred');
+        const { errors } = validation;
+
+        assert.equal(errors.name.kind, 'required');
+
     });
 });
+
