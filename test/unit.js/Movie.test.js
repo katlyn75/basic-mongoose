@@ -1,5 +1,5 @@
 const { assert } = require('chai');
-const Movie = require('../../lib/Movies');
+const Movie = require('../../lib/models/Movie');
 
 
 describe('Movies model', () => {
@@ -17,7 +17,7 @@ describe('Movies model', () => {
         const obj;
         obj._id = movie._id;
         Object.keys(data).forEach(key => {
-            onj[key] = data[key;]
+            obj[key] = data[key;]
         })*/
        
         assert.deepEqual(movie.toJSON(), { _id:movie._id, ...data });
