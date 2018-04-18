@@ -3,15 +3,21 @@ const Movie = require('../../lib/models/Movie');
 
 
 describe('Movies model', () => {
-
+    
+    
     it('valid model', () => {
         const data = {
             title: 'Legend',
             awards: 'none',
             rating: 'B+',
-            genre: 'romance'
+            genre: 'romance',
+            info: {
+                year: 1987
+            },
         };
+        
         const movie = new Movie(data);
+
 
         /*these lines of code mean the same as the assert line of code.  
         const obj;
@@ -21,7 +27,7 @@ describe('Movies model', () => {
         })*/
        
         assert.deepEqual(movie.toJSON(), { _id:movie._id, ...data });
-        assert.isUndefined(Movie.validateSync());
+        assert.isUndefined(movie.validateSync());
 
     });
     
@@ -32,7 +38,7 @@ describe('Movies model', () => {
         assert.isDefined('validation', 'you have erred');
         const { errors } = validation;
 
-        assert.equal(errors.name.kind, 'required');
+        assert.equal(errors.title.kind, 'required');
 
     });
 });
