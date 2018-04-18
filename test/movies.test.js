@@ -1,10 +1,13 @@
+//const { assert } = require('chai');
 const express = require('express');
 const app = express();
-const oceanAnimals = require('./lib/ocean');
+const movies = require('./lib/movies');
 
 
 app.use(express.json());
-app.use('/ocean', oceanAnimals);
+app.use('/models/movies', movies);
+
+
 
 module.exports = app.use;
 
