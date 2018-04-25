@@ -33,12 +33,12 @@ describe('movies API', () => {
             });
     });
 
-    const roundTrip = doc => {
-        JSON.parse(JSON.stringify(doc.toJSON()));
-    };
+    //const roundTrip = doc => {
+    //    JSON.parse(JSON.stringify(doc.toJSON()));
+    //};
 
     it('gets a movie by id', () => {
-        return Movie.create(legend).then(roundTrip)
+        return Movie.create(legend)//.then(roundTrip)
             .then(saved => {
                 legend = saved;
                 return request.get(`/movies/${legend._id}`);
