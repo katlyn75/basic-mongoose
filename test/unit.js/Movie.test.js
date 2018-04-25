@@ -2,7 +2,7 @@ const { assert } = require('chai');
 const Movie = require('../../lib/models/Movie');
 
 
-describe('Movies model', () => {
+describe('Movie model', () => {
     
     
     it('valid model', () => {
@@ -26,7 +26,7 @@ describe('Movies model', () => {
             obj[key] = data[key;]
         })*/
        
-        assert.deepEqual(movie.toJSON(), { _id:movie._id, ...data });
+        assert.deepEqual(movie.toJSON(), { _id: movie._id, ...data });
         assert.isUndefined(movie.validateSync());
 
     });
